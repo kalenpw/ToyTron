@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,6 @@ namespace KalenWilliamsProject6a {
     public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
-            txtTronSourceCode.Text = "This will eventually display the source code of a toy tron program and highlight each line of code when it is stepped into";
 
             //Fill stack panel with register values
             for(int i = 0; i < 8; i++) {
@@ -53,6 +53,13 @@ namespace KalenWilliamsProject6a {
             fileExplorer.DefaultExt = ".txt";
             fileExplorer.Filter = "TronCode (*.txt)|*.txt|All files (*.*)|*.*";
             fileExplorer.ShowDialog();
+
+            string fileName = fileExplorer.FileName;
+            string[] fileLines = File.ReadAllLines(fileName);
+            
+            for(int i = 0; i < fileLines.Length; i++) {
+                txtTronSourceCode.Text += fileLines[i] + "\r\n";
+            }
             
         }
 

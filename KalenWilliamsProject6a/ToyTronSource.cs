@@ -10,10 +10,20 @@ using System.Text;
 using System.Threading.Tasks;
 
 //This class will be used to contain a toy tron source code file
-//Not entirely neccessary but I'm trying to make 15 classes and failing 
-//without resorting to making each instruction their own class
+//And split it's instructions to be read by other classes
 
 namespace KalenWilliamsProject6a {
     class ToyTronSource {
+        List<Instruction> _AllInstructions = new List<Instruction>();
+        string _SourceCodeString;
+
+        public ToyTronSource(string sourceTextFile) {
+            _SourceCodeString = sourceTextFile;
+        }
+
+   
+
+
+
     }
 }
