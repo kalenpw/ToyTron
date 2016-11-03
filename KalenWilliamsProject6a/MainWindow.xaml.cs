@@ -56,10 +56,9 @@ namespace KalenWilliamsProject6a {
 
             string fileName = fileExplorer.FileName;
             string[] fileLines = File.ReadAllLines(fileName);
-            
-            for(int i = 0; i < fileLines.Length; i++) {
-                txtTronSourceCode.Text += fileLines[i] + "\r\n";
-            }
+
+            ToyTronSource source = new ToyTronSource(fileLines);
+            source.displaySourceCode();
             
         }
 

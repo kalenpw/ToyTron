@@ -17,6 +17,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+//Code for the Editor form
+//Kalen Williams 02 November 2016
+
 namespace KalenWilliamsProject6a {
     /// <summary>
     /// Interaction logic for Editor.xaml
@@ -24,7 +27,12 @@ namespace KalenWilliamsProject6a {
     public partial class Editor : Window {
         public Editor() {
             InitializeComponent();
+            dock.LastChildFill = true;
+            txtEditor.VerticalAlignment = VerticalAlignment.Stretch;
+            txtEditor.HorizontalAlignment = HorizontalAlignment.Stretch;
         }
+
+        
 
         //Closes editor window
         private void btnExit_Click(object sender, RoutedEventArgs e) {
