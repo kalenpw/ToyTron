@@ -51,8 +51,8 @@ namespace KalenWilliamsProject6a {
                 string[] lineOfCode = code[i].Split();
                 for(int j = 0; j < lineOfCode.Length; j++) {
                     if (!isNumeric(lineOfCode[j])) {
-                        if (lineOfCode[j] == "\r" || lineOfCode[j] == "\n") {
-                            //Allow whitespace
+                        if (lineOfCode[j] == "\r" || lineOfCode[j] == "\n" || lineOfCode[j] == "-") {
+                            //Allow whitespace and entering negative numbers
                         }
                         else {
                             return false;

@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,8 @@ namespace KalenWilliamsProject6a {
             dock.LastChildFill = true;
             txtEditor.VerticalAlignment = VerticalAlignment.Stretch;
             txtEditor.HorizontalAlignment = HorizontalAlignment.Stretch;
+            txtEditor.Text = "Tron Source Code";
+            txtEditor.AcceptsReturn = true;
         }
 
         
@@ -41,21 +44,38 @@ namespace KalenWilliamsProject6a {
 
         //Load button
         private void btnLoad_Click(object sender, RoutedEventArgs e) {
-            MessageBox.Show("This will eventually be used to load a .txt file containing toy tron code");
+            Stream streamWriter = null;
             Microsoft.Win32.OpenFileDialog fileExplorer = new Microsoft.Win32.OpenFileDialog();
             fileExplorer.DefaultExt = ".txt";
             fileExplorer.Filter = "TronCode (*.txt)|*.txt|All files (*.*)|*.*";
-            fileExplorer.ShowDialog();
+
+            if ((bool)fileExplorer.ShowDialog()) {
+                if((streamWriter = fileExplorer.OpenFile()) != null) {
+                    using (streamWriter) {
+                        txtEditor.Text = File.ReadAllText(fileExplorer.FileName);
+                    }
+                }
+            }
+            
+            
 
         }
 
         //Save button
         private void btnSave_Click(object sender, RoutedEventArgs e) {
-            MessageBox.Show("This will eventually be used to save a .txt file containing toy tron code");
             Microsoft.Win32.SaveFileDialog saveFile = new Microsoft.Win32.SaveFileDialog();
             saveFile.DefaultExt = ".txt";
             saveFile.Filter = "TronCode (*.txt)|*.txt|All files (*.*)|*.*";
-            saveFile.ShowDialog();
+
+            if((bool)saveFile.ShowDialog()) {
+                StreamWriter writer = new StreamWriter(saveFile.OpenFile());
+                writer.WriteLine(txtEditor.Text);
+                writer.Dispose();
+                writer.Close();
+            }
+            else {
+                MessageBox.Show("Error: Unable to save file. Please try again.");
+            }
         }
     }
 }
