@@ -12,6 +12,36 @@ using System.Threading.Tasks;
 //This class will be used to store the memory address while the toy tron class is running.
 
 namespace KalenWilliamsProject6a {
-    class Memory {
+    public class Memory {
+        //Fields
+        int _MemoryNumber;
+        int _Contents;
+     
+        //Constructors
+        public Memory(int memNumber) {
+            this._MemoryNumber = memNumber;
+        }
+
+        //Properties
+        public int MemoryNumber {
+            get {
+                return _MemoryNumber;
+            }
+
+            set {
+                _MemoryNumber = value;
+            }
+        }
+
+        public int Contents {
+            get {
+                return _Contents;
+            }
+
+            set {
+                _Contents = value;
+            }
+        }
+
     }
 }

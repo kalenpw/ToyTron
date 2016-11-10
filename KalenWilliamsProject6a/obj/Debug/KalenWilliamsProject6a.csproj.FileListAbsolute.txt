@@ -30,3 +30,5 @@ C:\Users\kalenpw\Documents\Visual Studio 2015\Projects\6b\KalenWilliamsProject6a
 C:\Users\kalenpw\Documents\Visual Studio 2015\Projects\6b\KalenWilliamsProject6a\obj\Debug\KalenWilliamsProject6a.g.resources
 C:\Users\kalenpw\Documents\Visual Studio 2015\Projects\6b\KalenWilliamsProject6a\obj\Debug\KalenWilliamsProject6a.Properties.Resources.resources
 C:\Users\kalenpw\Documents\Visual Studio 2015\Projects\6b\KalenWilliamsProject6a\obj\Debug\KalenWilliamsProject6a.csproj.GenerateResource.Cache
+C:\Users\kalenpw\Documents\Visual Studio 2015\Projects\6b\KalenWilliamsProject6a\obj\Debug\UserInput.g.cs
+C:\Users\kalenpw\Documents\Visual Studio 2015\Projects\6b\KalenWilliamsProject6a\obj\Debug\UserInput.baml

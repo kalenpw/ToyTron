@@ -26,8 +26,6 @@ namespace KalenWilliamsProject6a {
             this._SourceReg = sourceReg;
             this._DestinationReg = destinationReg;
             fillInitialRegisterValues();
-
-
         }
 
         //Properties
@@ -64,25 +62,34 @@ namespace KalenWilliamsProject6a {
 
         //Methods
 
-
+        //Performs an instruction
+        //Kalen Williams 08 November 2016
         public override void doInstruction() {
+            fillInitialRegisterValues();
             int result = _SourceReg.Contents + _DestinationReg.Contents;
             _DestinationReg.Contents = result;
             updateDisplayRegisters();
+            fillInitialRegisterValues();
         }
 
+        //Gets the initial values of registers
+        //Kalen Williams 08 November 2016
         private void fillInitialRegisterValues() {
             _SourceReg.Contents = stringToInt(getTextBlockFromInt(_SourceReg.RegisterNumber).Text);
             _DestinationReg.Contents = stringToInt(getTextBlockFromInt(_DestinationReg.RegisterNumber).Text);
 
         }
 
+        //Updates the textblock of registers in form
+        //Kalen Williams 08 November 2016
         private void updateDisplayRegisters() {
             getTextBlockFromInt(_SourceReg.RegisterNumber).Text = _SourceReg.Contents.ToString();
             getTextBlockFromInt(_DestinationReg.RegisterNumber).Text = _DestinationReg.Contents.ToString();
 
         }
 
+        //Returns the corresponding textblock from a register's int value
+        //Kalen Williams 08 November 2016
         private TextBlock getTextBlockFromInt(int value) {
             switch (value) {
                 case 0:
@@ -106,6 +113,8 @@ namespace KalenWilliamsProject6a {
             }
         }
 
+        //Converts a string to integer
+        //Kalen Williams 08 November 2016
         private int stringToInt(String str) {
             int num = 0;
             bool isNum;
@@ -117,7 +126,5 @@ namespace KalenWilliamsProject6a {
                 return -1;
             }
         }
-
-
     }
 }

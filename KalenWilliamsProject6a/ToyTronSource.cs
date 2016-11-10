@@ -77,6 +77,12 @@ namespace KalenWilliamsProject6a {
                 case 70:
                     returnInstruction = new Add(new Register(source), new Register(destination));
                     break;
+                case 71:
+                    returnInstruction = new Subtract(new Register(source), new Register(destination));
+                    break;
+                case 50:
+                    returnInstruction = new Read(new Memory(source), new Memory(destination));
+                    break;
                 case 51:
                     returnInstruction = new Write(new Register(source), new Register(destination));
                     break;

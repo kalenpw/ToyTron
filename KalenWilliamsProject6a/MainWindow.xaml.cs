@@ -79,13 +79,17 @@ namespace KalenWilliamsProject6a {
             List<Instruction> instructions = source.AllInstructions;
             for(int i=0; i < instructions.Count; i++) {
                 instructions[i].doInstruction();
+                incrementProgramCounter();
             }
 
         }
 
         //Step button
         private void btnStep_Click(object sender, RoutedEventArgs e) {
-            MessageBox.Show("This will eventually step through steps of a Toy Tron program");
+            List<Instruction> instructions = source.AllInstructions;
+            instructions[0].doInstruction();
+            instructions.RemoveAt(0);
+            incrementProgramCounter();
         }
 
         //Reset button
@@ -99,6 +103,46 @@ namespace KalenWilliamsProject6a {
             tbRegSix.Text = 0.ToString();
             tbRegSeven.Text = 0.ToString();
             tbRegEight.Text = 0.ToString();
+            clearMemory();
+        }
+
+        private void incrementProgramCounter() {
+            int newValue = stringToInt(txtProgramCounter.Text) + 1;
+            txtProgramCounter.Text = "0" + newValue.ToString();
+        }
+
+        private int stringToInt(String str) {
+            int num = 0;
+            bool isNum;
+            isNum = int.TryParse(str, out num);
+            if (isNum) {
+                return num;
+            }
+            else {
+                return -1;
+            }
+        }
+
+        private void clearMemory() {
+            int toPrint = 8;
+            for(int i = 1; i < 93; i++) {
+                txtMemory.Text += formatIntForNumber(toPrint) + " | ";
+                if(i % 4 == 0) {
+                    txtMemory.Text += "\r\n";
+                }
+                toPrint++;
+            }
+        }
+
+        private String formatIntForNumber(int num) {
+            String formatted = "";
+            if (num < 10) {
+                formatted = "0" + num.ToString();
+            }
+            else {
+                formatted = num.ToString();
+            }
+            return formatted;
         }
     }
 }
