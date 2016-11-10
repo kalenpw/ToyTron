@@ -1,7 +1,20 @@
 # ToyTron
-Assembly Simulator
-Simple assembly language simulator with the following commands:
-
+ToyTron computers run on a non-existent machine
+language called ToyTron machine code. The ToyTron uses decimal values with 8
+registers (0-7) and 100 memory locations (0-99) that can store integers between -999999
+and 999999. Registers are special memory locations inside the CPU on which the
+computer can do special operations like adding, subtracting, etc. Note the 100 memory
+locations must include all the lines in the ToyTron program as well as all the memory
+used by that program. The ToyTron Computer assumes the first line of the program is at
+location 0 in the memory.
+A Foo-MaC instruction consists of 6 numeric digits mapped to three integers each having
+values between 0 and 99. The left-most pair of digits is the instruction code that indicates
+whether the ToyTron Computer is supposed to read or write something, move something
+into or out of memory, etc. The middle pair of digits is the “source”, which is either a
+memory location or a register depending on the instruction code, and the right most pair
+of digits is the “destination” which also is either a memory location or register depending
+on the instruction. Some instructions may not need either a source or destination; in that
+case, the unneeded source or destination digits are set to zero.
 <ul>
 <li>50-Read. Reads an integer from the keyboard and places it into the location in
 memory provided by the destination digits (0-99). The source digits are set to
