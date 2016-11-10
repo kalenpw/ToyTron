@@ -55,13 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="GlobalMemory.cs" />
     <Compile Include="Instructions\Add.cs" />
     <Compile Include="Instructions\Branch.cs" />
     <Compile Include="Instructions\BranchZero.cs" />
-    <Compile Include="Cpu.cs" />
     <Compile Include="Instructions\Halt.cs" />
     <Compile Include="Instructions\Load.cs" />
-    <Compile Include="ProgramCounter.cs" />
     <Compile Include="Instructions\Read.cs" />
     <Compile Include="Register.cs" />
     <Compile Include="Instructions\Store.cs" />
@@ -98,7 +97,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Memory.cs" />
-    <Compile Include="MemoryDump.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

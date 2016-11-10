@@ -32,7 +32,7 @@ namespace KalenWilliamsProject6a {
         private void btnSubmit_Click(object sender, RoutedEventArgs e) {
             String userInput = txtInput.Text;
             if (isNumeric(userInput)) {
-                _DestinationReg.Contents = stringToInt(userInput);
+                GlobalMemory.AllMemory[_DestinationReg.MemoryNumber].Contents = stringToInt(userInput);
                 this.Close();
             }
             else {
@@ -40,6 +40,8 @@ namespace KalenWilliamsProject6a {
             }
         }
 
+        //Converts a string to an integer
+        //Kalen Williams 10 November 2016
         private int stringToInt(String str) {
             int num = 0;
             bool isNum;
@@ -52,6 +54,8 @@ namespace KalenWilliamsProject6a {
             }
         }
 
+        //Checks if a string is an integer
+        //Kalen Williams 10 November 2016
         private bool isNumeric(string str) {
             int number;
             bool isNumeric = int.TryParse(str, out number);

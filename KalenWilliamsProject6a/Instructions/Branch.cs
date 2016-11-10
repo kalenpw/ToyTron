@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace KalenWilliamsProject6a {
     class Branch : Instruction {
         public override void doInstruction() {
-            throw new NotImplementedException();
+            
         }
     }
 }

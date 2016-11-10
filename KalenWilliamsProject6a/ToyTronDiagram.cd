@@ -1,164 +1,158 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Comment CommentText="CPU will contain an instance of ProgramCounter, Memory, MemoryDump, and Register">
-    <Position X="2.613" Y="4.499" Height="0.75" Width="3.164" />
+  <Comment CommentText="ToyTronSource contains a list of Instructions which have either/or/both Memory and Register">
+    <Position X="2.163" Y="4.404" Height="0.75" Width="1.7" />
   </Comment>
-  <Comment CommentText="WPF Form Classes">
-    <Position X="11.317" Y="3.141" Height="0.75" Width="1.7" />
+  <Comment CommentText="Contains arrays of All memory address and all registers">
+    <Position X="7.187" Y="4.534" Height="0.75" Width="1.7" />
   </Comment>
-  <Comment CommentText="all instructions will inherit from Instruction">
-    <Position X="7.655" Y="0.5" Height="0.75" Width="1.7" />
+  <Comment CommentText="GUI forms">
+    <Position X="13.201" Y="2.827" Height="0.404" Width="1.065" />
   </Comment>
-  <Class Name="KalenWilliamsProject6a.Add" Collapsed="true">
-    <Position X="0.5" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Add.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="KalenWilliamsProject6a.App" Collapsed="true">
-    <Position X="16.5" Y="6.5" Width="1.5" />
+    <Position X="17.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>App.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KalenWilliamsProject6a.Branch" Collapsed="true">
-    <Position X="5" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Branch.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="KalenWilliamsProject6a.BranchNegative" Collapsed="true">
-    <Position X="11.75" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>BranchNegative.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="KalenWilliamsProject6a.BranchZero" Collapsed="true">
-    <Position X="14" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>BranchZero.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="KalenWilliamsProject6a.Cpu" Collapsed="true">
-    <Position X="3.25" Y="5.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Cpu.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="KalenWilliamsProject6a.Editor" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="10.5" Y="4.25" Width="1.5" />
+    <Position X="14" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
       <FileName>Editor.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="KalenWilliamsProject6a.Halt" Collapsed="true">
-    <Position X="7.25" Y="1.75" Width="1.5" />
+  <Class Name="KalenWilliamsProject6a.GlobalMemory" Collapsed="true">
+    <Position X="7.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Halt.cs</FileName>
+      <HashCode>AQAAALAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAABAAA=</HashCode>
+      <FileName>GlobalMemory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KalenWilliamsProject6a.Add" Collapsed="true">
+    <Position X="14" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAFAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Instructions\Add.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KalenWilliamsProject6a.Branch" Collapsed="true">
+    <Position X="18.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Instructions\Branch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KalenWilliamsProject6a.BranchNegative" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Instructions\BranchNegative.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KalenWilliamsProject6a.BranchZero" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Instructions\BranchZero.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KalenWilliamsProject6a.Halt" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Instructions\Halt.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KalenWilliamsProject6a.Instruction" Collapsed="true">
     <Position X="10.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Instruction.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Instructions\Instruction.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KalenWilliamsProject6a.Load" Collapsed="true">
+    <Position X="20.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAFQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Instructions\Load.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KalenWilliamsProject6a.Read" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEQAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Instructions\Read.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KalenWilliamsProject6a.Store" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAiAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Instructions\Store.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KalenWilliamsProject6a.Subtract" Collapsed="true">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAFAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Instructions\Subtract.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KalenWilliamsProject6a.Write" Collapsed="true">
     <Position X="16.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Load.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEQAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Instructions\Write.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KalenWilliamsProject6a.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="12.25" Y="4.25" Width="1.5" />
+    <Position X="13" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAkEAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <HashCode>gAAJCAAAkEAAAAIACAAAAAAACCAAAAAIAQAAAAAAFAA=</HashCode>
       <FileName>MainWindow.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="KalenWilliamsProject6a.Memory" Collapsed="true">
-    <Position X="2.25" Y="6.25" Width="1.5" />
+    <Position X="1" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAkAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAABAAAA=</HashCode>
       <FileName>Memory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KalenWilliamsProject6a.MemoryDump" Collapsed="true">
-    <Position X="4" Y="6.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>MemoryDump.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="KalenWilliamsProject6a.ProgramCounter" Collapsed="true">
-    <Position X="0.5" Y="6.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ProgramCounter.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="KalenWilliamsProject6a.Read" Collapsed="true">
-    <Position X="18.5" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Read.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="KalenWilliamsProject6a.Register" Collapsed="true">
-    <Position X="5.75" Y="6.25" Width="1.5" />
+    <Position X="3.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAEAEAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>Register.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KalenWilliamsProject6a.Store" Collapsed="true">
-    <Position X="2.75" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Store.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="KalenWilliamsProject6a.Subtract" Collapsed="true">
-    <Position X="9.5" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Subtract.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="KalenWilliamsProject6a.ToyTronSource" Collapsed="true">
-    <Position X="3.25" Y="7.25" Width="1.5" />
+    <Position X="2.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>gQAACAAAAMEEAAAAgAAAAAAAABAAAAAAAAAAAAAgAAA=</HashCode>
       <FileName>ToyTronSource.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KalenWilliamsProject6a.Write" Collapsed="true">
-    <Position X="20.75" Y="1.75" Width="1.5" />
+  <Class Name="KalenWilliamsProject6a.UserInput" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Write.cs</FileName>
+      <HashCode>gAAACAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>UserInput.xaml.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="KalenWilliamsProject6a.Properties.Resources" Collapsed="true">
-    <Position X="16.5" Y="4.75" Width="1.5" />
+    <Position X="17.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="KalenWilliamsProject6a.Properties.Settings" Collapsed="true">
-    <Position X="16.5" Y="5.5" Width="1.5" />
+    <Position X="17.25" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>

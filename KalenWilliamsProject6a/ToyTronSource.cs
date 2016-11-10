@@ -1,7 +1,7 @@
 ﻿//Kalen Williams
 //CS 3308
 //Exercise 6a Toy Tron
-//27 October 2016
+//10 November 2016
 
 using System;
 using System.Collections.Generic;
@@ -16,32 +16,34 @@ using System.Windows.Controls;
 
 namespace KalenWilliamsProject6a {
     class ToyTronSource {
+        //Fields
         List<Instruction> _AllInstructions = new List<Instruction>();
         string[] _SourceCode;
 
+        //Constructor
+        public ToyTronSource(string[] sourceTextFile) {
+            _SourceCode = sourceTextFile;
+            fillInstructionList();
+        }
+
+        //Properties
         public List<Instruction> AllInstructions {
             get {
                 return _AllInstructions;
             }
         }
 
-        public ToyTronSource(string[] sourceTextFile) {
-            _SourceCode = sourceTextFile;
-            fillInstructionList();
-        }
-
-
         //Methods
         //Fills instruction list
+        //Kalen Williams 10 November 2016
         private void fillInstructionList() {
             for(int i = 0; i < _SourceCode.Length; i++) {
                 AllInstructions.Add(deconstructInstruction(_SourceCode[i]));
-                MessageBox.Show("added to instruction list " + AllInstructions[i].ToString());
-            }
-            
+            }     
         }
         
         //Splits a complete instruction into its different parts
+        //Kalen Williams 10 November 2016
         private Instruction deconstructInstruction(String completeInstruction) {
             Instruction deconstructedInstruction = null;
             String instruction = "";
@@ -50,27 +52,35 @@ namespace KalenWilliamsProject6a {
             int instructionInt;
             int sourceInt;
             int destinationInt;
+            if (completeInstruction.Length == 6) {
 
-            for (int i = 0; i < 2; i++) {
-                instruction += completeInstruction[i];
+                for (int i = 0; i < 2; i++) {
+                    instruction += completeInstruction[i];
+                }
+                for (int i = 2; i < 4; i++) {
+                    source += completeInstruction[i];
+                }
+                for (int i = 4; i < 6; i++) {
+                    destination += completeInstruction[i];
+                }
+
+                instructionInt = stringToInt(instruction);
+                sourceInt = stringToInt(source);
+                destinationInt = stringToInt(destination);
+
+                deconstructedInstruction = instructionFromInt(instructionInt, sourceInt, destinationInt);
+
+                return deconstructedInstruction;
             }
-            for (int i = 2; i < 4; i++) {
-                source += completeInstruction[i];
+            //If syntax error set instruction to halt.
+            else {
+                return new Halt();
             }
-            for (int i = 4; i < 6; i++) {
-                destination += completeInstruction[i];
-            }
-
-            instructionInt = stringToInt(instruction);
-            sourceInt = stringToInt(source);
-            destinationInt = stringToInt(destination);
-
-            deconstructedInstruction = instructionFromInt(instructionInt, sourceInt, destinationInt);
-
-            return deconstructedInstruction;
 
         }
 
+        //Gets an instruction from int(opcode)
+        //Kalen Williams 10 November 2016
         private Instruction instructionFromInt(int instructionNum, int source, int destination) {
             Instruction returnInstruction = null;
             switch (instructionNum) {
@@ -84,14 +94,28 @@ namespace KalenWilliamsProject6a {
                     returnInstruction = new Read(new Memory(source), new Memory(destination));
                     break;
                 case 51:
-                    returnInstruction = new Write(new Register(source), new Register(destination));
+                    returnInstruction = new Write(new Memory(source), new Memory(destination));
                     break;
+                case 83:
+                    returnInstruction = new Halt();
+                    break;
+                case 60:
+                    returnInstruction = new Load(new Memory(source), new Register(destination));
+                    break;
+                case 61:
+                    returnInstruction = new Store(new Register(source), new Memory(destination));
+                    break;
+                //Branches
+                //Not implemented
+
 
             }
 
             return returnInstruction;
         }
 
+        //Converts a string to an integer
+        //Kalen Williams 10 November 2016
         private int stringToInt(String str) {
             int num = 0;
             bool isNum;
@@ -104,6 +128,8 @@ namespace KalenWilliamsProject6a {
             }
         }
 
+        //Displays source code to main window
+        //Kalen Williams 03 November 2016
         public void displaySourceCode() {
             //http://stackoverflow.com/questions/17001486/how-to-access-wpf-mainwindow-controls-from-my-own-cs-file
             TextBlock sourceDisplay = ((MainWindow)System.Windows.Application.Current.MainWindow).txtTronSourceCode;
@@ -124,6 +150,8 @@ namespace KalenWilliamsProject6a {
 
         //Returns true if source code is valid, false if not valid
         //Valid = 6 numeric chars on each line
+        //Note doesn't work with negatives, yet
+        //Kalen Williams 04 November 2016
         private bool validateSourceCode(string[] code) {
             for(int i=0; i < code.Length; i++) {
                 if(code[i].Length != 6) {
@@ -132,7 +160,7 @@ namespace KalenWilliamsProject6a {
                 string[] lineOfCode = code[i].Split();
                 for(int j = 0; j < lineOfCode.Length; j++) {
                     if (!isNumeric(lineOfCode[j])) {
-                        if (lineOfCode[j] == "\r" || lineOfCode[j] == "\n" || lineOfCode[j] == "-") {
+                        if (lineOfCode[j] == "\r" || lineOfCode[j] == "\n") {
                             //Allow whitespace and entering negative numbers
                         }
                         else {
@@ -146,16 +174,14 @@ namespace KalenWilliamsProject6a {
             return true;
         }
 
+        //Checks if a string is an integer
+        //Kalen Williams 03 November 2016
         private bool isNumeric(string str) {
             int number;
             bool isNumeric = int.TryParse(str, out number);
             return isNumeric;
         }
 
-        private void getInstructions() {
 
-        }
-
-
-    }//End class
+    }
 }

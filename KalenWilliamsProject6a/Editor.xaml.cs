@@ -1,7 +1,7 @@
 ﻿//Kalen Williams
 //CS 3308
 //Exercise 6a Toy Tron
-//27 October 2016
+//10 November 2016
 
 using System;
 using System.Collections.Generic;
@@ -17,9 +17,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
-//Code for the Editor form
-//Kalen Williams 02 November 2016
 
 namespace KalenWilliamsProject6a {
     /// <summary>
@@ -37,7 +34,7 @@ namespace KalenWilliamsProject6a {
 
         
 
-        //Closes editor window
+        //button to exit window
         private void btnExit_Click(object sender, RoutedEventArgs e) {
             this.Close();
         }
@@ -55,10 +52,7 @@ namespace KalenWilliamsProject6a {
                         txtEditor.Text = File.ReadAllText(fileExplorer.FileName);
                     }
                 }
-            }
-            
-            
-
+            }      
         }
 
         //Save button

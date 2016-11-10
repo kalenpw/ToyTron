@@ -19,24 +19,24 @@
         <TextBlock x:Name="txtTronSourceCode" HorizontalAlignment="Left" Margin="10,27,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="450" Width="291"/>
         <Label x:Name="lblRegisters" Content="Registers" HorizontalAlignment="Left" Margin="301,27,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold" FontSize="14.667"/>
         <StackPanel x:Name="stkRegisters" HorizontalAlignment="Left" Height="183" Margin="400,53,0,0" VerticalAlignment="Top" Width="100">
-            <TextBlock x:Name="tbRegOne" TextWrapping="Wrap" Text="1" Height="23"/>
-            <TextBlock x:Name="tbRegTwo" TextWrapping="Wrap" Text="2" Height="23"/>
-            <TextBlock x:Name="tbRegThree" TextWrapping="Wrap" Text="3" Height="23"/>
-            <TextBlock x:Name="tbRegFour" TextWrapping="Wrap" Text="4" Height="23"/>
-            <TextBlock x:Name="tbRegFive" TextWrapping="Wrap" Text="5" Height="23"/>
-            <TextBlock x:Name="tbRegSix" TextWrapping="Wrap" Text="6" Height="23"/>
-            <TextBlock x:Name="tbRegSeven" TextWrapping="Wrap" Text="7" Height="23"/>
-            <TextBlock x:Name="tbRegEight" TextWrapping="Wrap" Text="8" Height="23"/>
+            <TextBlock x:Name="tbRegOne" TextWrapping="Wrap" Text="0" Height="23"/>
+            <TextBlock x:Name="tbRegTwo" TextWrapping="Wrap" Text="0" Height="23"/>
+            <TextBlock x:Name="tbRegThree" TextWrapping="Wrap" Text="0" Height="23"/>
+            <TextBlock x:Name="tbRegFour" TextWrapping="Wrap" Text="0" Height="23"/>
+            <TextBlock x:Name="tbRegFive" TextWrapping="Wrap" Text="0" Height="23"/>
+            <TextBlock x:Name="tbRegSix" TextWrapping="Wrap" Text="0" Height="23"/>
+            <TextBlock x:Name="tbRegSeven" TextWrapping="Wrap" Text="0" Height="23"/>
+            <TextBlock x:Name="tbRegEight" TextWrapping="Wrap" Text="0" Height="23"/>
 
         </StackPanel>
         <Label x:Name="lblProgramCounter" Content="Program Counter" HorizontalAlignment="Left" Margin="301,293,0,0" VerticalAlignment="Top" Width="119" FontWeight="Bold" FontSize="13.333"/>
         <TextBlock x:Name="txtProgramCounter" HorizontalAlignment="Left" Margin="306,321,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Height="28" Width="32"/>
 
         <ScrollViewer Margin="530,0,0,0" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
-            <TextBlock x:Name="txtMemory" TextWrapping="NoWrap" Text="" Width="378" Height="418" FontSize="14.667"/>
+            <TextBlock x:Name="txtMemory" TextWrapping="NoWrap" Width="298" Height="348" FontSize="14.667"/>
         </ScrollViewer>
         <Label x:Name="label" Content="Delay" HorizontalAlignment="Left" Margin="306,375,0,0" VerticalAlignment="Top" Width="66" FontWeight="Bold" FontSize="13.333"/>
-        <TextBox x:Name="tbDelay" HorizontalAlignment="Left" Height="23" Margin="324,403,0,0" TextWrapping="Wrap" Text="Delay in MS" VerticalAlignment="Top" Width="48"/>
+        <TextBox x:Name="txtDelay" HorizontalAlignment="Left" Height="23" Margin="324,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"/>
         <Label x:Name="lblRegOne" Content="Register 00" HorizontalAlignment="Left" Margin="306,48,0,0" VerticalAlignment="Top"/>
         <Rectangle Fill="#FF000008" HorizontalAlignment="Left" Height="1" Margin="311,72,0,0" Stroke="Black" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
@@ -125,6 +125,8 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
+        <Label x:Name="lblMemOnesDigit" Content="00 | 01 | 02 | 03 | 04 | 05 | 06 | 07 | 08 | 09" Margin="558,22,10,420"/>
+        <Label x:Name="lblMemTensDigit" Content="" Margin="533,45,292,147"/>
 
     </Grid>
 </Window>

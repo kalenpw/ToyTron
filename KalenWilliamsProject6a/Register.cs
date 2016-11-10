@@ -1,7 +1,7 @@
 ﻿//Kalen Williams
 //CS 3308
 //Exercise 6a Toy Tron
-//27 October 2016
+//10 November 2016
 
 using System;
 using System.Collections.Generic;
@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 
 
 //Represents a register
+//Kalen Williams 10 November 2016
+
 namespace KalenWilliamsProject6a {
     class Register {
         int _RegisterNumber;

@@ -1,7 +1,7 @@
 ﻿//Kalen Williams
 //CS 3308
 //Exercise 6a Toy Tron
-//27 October 2016
+//10 November 2016
 
 using System;
 using System.Collections.Generic;
@@ -26,7 +26,6 @@ namespace KalenWilliamsProject6a {
         public override void doInstruction() {
             UserInput inputForm = new UserInput(ref _DestinationMem);
             inputForm.ShowDialog();
-            MessageBox.Show(_DestinationMem.Contents.ToString());
         }
     }
 }

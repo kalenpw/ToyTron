@@ -8,19 +8,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 //The write instruction
 namespace KalenWilliamsProject6a {
     class Write : Instruction {
-        private Register _SourceReg;
-        private Register _DestinationReg;
+        private Memory _SourceMem;
+        private Memory _DestinationMem;
 
-        public Write(Register newSource, Register newDestination) {
-            this._SourceReg = newSource;
-            this._DestinationReg = newDestination;
+        public Write(Memory newSource, Memory newDestination) {
+            this._SourceMem = newSource;
+            this._DestinationMem = newDestination;
         }
 
+        //Performs instruction
+        //Writes to messagebox
         public override void doInstruction() {
-            throw new NotImplementedException();
+            MessageBox.Show(GlobalMemory.AllMemory[_SourceMem.MemoryNumber].Contents.ToString());
         }
     }
 }
