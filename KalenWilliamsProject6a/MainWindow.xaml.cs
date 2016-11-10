@@ -24,6 +24,8 @@ namespace KalenWilliamsProject6a {
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
+        //Public variables
+        ToyTronSource source;
         public MainWindow() {
             InitializeComponent();
 
@@ -33,6 +35,10 @@ namespace KalenWilliamsProject6a {
                 register.Text = "Register 0" + i + ":";
                 stkRegisters.Children.Add(register);
             }
+
+
+
+
         }
 
         //Button to open an editor
@@ -52,24 +58,47 @@ namespace KalenWilliamsProject6a {
             Microsoft.Win32.OpenFileDialog fileExplorer = new Microsoft.Win32.OpenFileDialog();
             fileExplorer.DefaultExt = ".txt";
             fileExplorer.Filter = "TronCode (*.txt)|*.txt|All files (*.*)|*.*";
-            fileExplorer.ShowDialog();
 
-            string fileName = fileExplorer.FileName;
-            string[] fileLines = File.ReadAllLines(fileName);
+            if ((bool)fileExplorer.ShowDialog()) {
+                string fileName = fileExplorer.FileName;
+                string[] fileLines = File.ReadAllLines(fileName);
 
-            ToyTronSource source = new ToyTronSource(fileLines);
-            source.displaySourceCode();
+                source = new ToyTronSource(fileLines);
+
+                source.displaySourceCode();
+            }
+            else {
+                MessageBox.Show("Error: Unable to load file. Please try again");
+            }
+            
             
         }
 
         //Run button
         private void btnRun_Click(object sender, RoutedEventArgs e) {
-            MessageBox.Show("This will eventually run a Toy Tron program");
+            List<Instruction> instructions = source.AllInstructions;
+            for(int i=0; i < instructions.Count; i++) {
+                instructions[i].doInstruction();
+            }
+
         }
 
         //Step button
         private void btnStep_Click(object sender, RoutedEventArgs e) {
             MessageBox.Show("This will eventually step through steps of a Toy Tron program");
+        }
+
+        //Reset button
+        private void btnReset_Click(object sender, RoutedEventArgs e) {
+            txtTronSourceCode.Text = "";
+            tbRegOne.Text = 0.ToString();
+            tbRegTwo.Text = 0.ToString();
+            tbRegThree.Text = 0.ToString();
+            tbRegFour.Text = 0.ToString();
+            tbRegFive.Text = 0.ToString();
+            tbRegSix.Text = 0.ToString();
+            tbRegSeven.Text = 0.ToString();
+            tbRegEight.Text = 0.ToString();
         }
     }
 }

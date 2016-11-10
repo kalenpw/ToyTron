@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 //Branch negative instruction
 namespace KalenWilliamsProject6a
 {
-    class BranchNegative : Instruction{
+    class BranchNegative : Instruction {
+        public override void doInstruction() {
+            throw new NotImplementedException();
+        }
     }
 }

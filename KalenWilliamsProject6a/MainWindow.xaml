@@ -12,13 +12,23 @@
             <Button x:Name="btnLoad" Content="Load" Width="75" Click="btnLoad_Click"/>
             <Button x:Name="btnRun" Content="Run" Width="75" Click="btnRun_Click"/>
             <Button x:Name="btnStep" Content="Step" Width="75" Click="btnStep_Click"/>
-            <Button x:Name="btnReset" Content="Reset" Width="75"/>
+            <Button x:Name="btnReset" Content="Reset" Width="75" Click="btnReset_Click"/>
             <Button x:Name="btnExit" Content="Exit" Width="75" Click="btnExit_Click"/>
 
         </Menu>
         <TextBlock x:Name="txtTronSourceCode" HorizontalAlignment="Left" Margin="10,27,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="450" Width="291"/>
         <Label x:Name="lblRegisters" Content="Registers" HorizontalAlignment="Left" Margin="301,27,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold" FontSize="14.667"/>
-        <StackPanel x:Name="stkRegisters" HorizontalAlignment="Left" Height="235" Margin="306,53,0,0" VerticalAlignment="Top" Width="100"/>
+        <StackPanel x:Name="stkRegisters" HorizontalAlignment="Left" Height="183" Margin="306,53,0,0" VerticalAlignment="Top" Width="100">
+            <TextBlock x:Name="tbRegOne" TextWrapping="Wrap" Text="1" Height="23"/>
+            <TextBlock x:Name="tbRegTwo" TextWrapping="Wrap" Text="2" Height="23"/>
+            <TextBlock x:Name="tbRegThree" TextWrapping="Wrap" Text="3" Height="23"/>
+            <TextBlock x:Name="tbRegFour" TextWrapping="Wrap" Text="4" Height="23"/>
+            <TextBlock x:Name="tbRegFive" TextWrapping="Wrap" Text="5" Height="23"/>
+            <TextBlock x:Name="tbRegSix" TextWrapping="Wrap" Text="6" Height="23"/>
+            <TextBlock x:Name="tbRegSeven" TextWrapping="Wrap" Text="7" Height="23"/>
+            <TextBlock x:Name="tbRegEight" TextWrapping="Wrap" Text="8" Height="23"/>
+
+        </StackPanel>
         <Label x:Name="lblProgramCounter" Content="Program Counter" HorizontalAlignment="Left" Margin="301,293,0,0" VerticalAlignment="Top" Width="119" FontWeight="Bold" FontSize="13.333"/>
         <TextBlock x:Name="txtProgramCounter" HorizontalAlignment="Left" Margin="306,321,0,0" TextWrapping="Wrap" Text="Next Instruction:" VerticalAlignment="Top" Height="28" Width="95"/>
 

@@ -8,8 +8,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//The load instruction
+//The subtract instruction
 namespace KalenWilliamsProject6a {
-    class Load : Instruction {
+    class Subtract : Instruction {
+        public override void doInstruction() {
+            throw new NotImplementedException();
+        }
     }
 }

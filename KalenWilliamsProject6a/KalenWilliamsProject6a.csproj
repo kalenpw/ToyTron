@@ -55,19 +55,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Add.cs" />
-    <Compile Include="Branch.cs" />
-    <Compile Include="BranchZero.cs" />
+    <Compile Include="Instructions\Add.cs" />
+    <Compile Include="Instructions\Branch.cs" />
+    <Compile Include="Instructions\BranchZero.cs" />
     <Compile Include="Cpu.cs" />
-    <Compile Include="Halt.cs" />
-    <Compile Include="Load.cs" />
+    <Compile Include="Instructions\Halt.cs" />
+    <Compile Include="Instructions\Load.cs" />
     <Compile Include="ProgramCounter.cs" />
-    <Compile Include="Read.cs" />
+    <Compile Include="Instructions\Read.cs" />
     <Compile Include="Register.cs" />
-    <Compile Include="Store.cs" />
-    <Compile Include="Subtract.cs" />
+    <Compile Include="Instructions\Store.cs" />
+    <Compile Include="Instructions\Subtract.cs" />
     <Compile Include="ToyTronSource.cs" />
-    <Compile Include="Write.cs" />
+    <Compile Include="Instructions\Write.cs" />
     <Page Include="Editor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -83,7 +83,7 @@
     <Compile Include="Editor.xaml.cs">
       <DependentUpon>Editor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Instruction.cs" />
+    <Compile Include="Instructions\Instruction.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -109,7 +109,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="BranchNegative.cs" />
+    <Compile Include="Instructions\BranchNegative.cs" />
     <None Include="ToyTronDiagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

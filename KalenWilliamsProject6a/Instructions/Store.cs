@@ -8,9 +8,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-//The read instruction 
+//the store instruction
 namespace KalenWilliamsProject6a {
-    class Read : Instruction {
+    class Store : Instruction {
+
+        public Store() {
+            
+        }
+
+        public override void doInstruction() {
+            throw new NotImplementedException();
+        }
     }
 }

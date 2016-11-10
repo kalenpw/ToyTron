@@ -10,8 +10,34 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-//This class will be used to store the registers of toy tron 
+//Represents a register
 namespace KalenWilliamsProject6a {
     class Register {
+        int _RegisterNumber;
+        int _Contents;
+
+        public Register(int regNumber) {
+            this._RegisterNumber = regNumber;
+        }
+
+        public int RegisterNumber {
+            get {
+                return _RegisterNumber;
+            }
+
+            set {
+                _RegisterNumber = value;
+            }
+        }
+
+        public int Contents {
+            get {
+                return _Contents;
+            }
+
+            set {
+                _Contents = value;
+            }
+        }
     }
 }

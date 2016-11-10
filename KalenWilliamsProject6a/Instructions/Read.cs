@@ -8,8 +8,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//The add instruction
+
+//The read instruction 
 namespace KalenWilliamsProject6a {
-    class Add : Instruction{
+    class Read : Instruction {
+        public override void doInstruction() {
+            throw new NotImplementedException();
+        }
     }
 }

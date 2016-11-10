@@ -8,8 +8,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//The branchzero instruction
+//The halt command
 namespace KalenWilliamsProject6a {
-    class BranchZero : Instruction{
+    class Halt : Instruction {
+        public override void doInstruction() {
+            throw new NotImplementedException();
+        }
     }
 }

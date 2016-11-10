@@ -8,8 +8,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//the store instruction
+//The branch instruction
 namespace KalenWilliamsProject6a {
-    class Store : Instruction {
+    class Branch : Instruction {
+        public override void doInstruction() {
+            throw new NotImplementedException();
+        }
     }
 }

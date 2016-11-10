@@ -19,8 +19,83 @@ namespace KalenWilliamsProject6a {
         List<Instruction> _AllInstructions = new List<Instruction>();
         string[] _SourceCode;
 
+        public List<Instruction> AllInstructions {
+            get {
+                return _AllInstructions;
+            }
+        }
+
         public ToyTronSource(string[] sourceTextFile) {
             _SourceCode = sourceTextFile;
+            fillInstructionList();
+        }
+
+
+        //Methods
+        //Fills instruction list
+        private void fillInstructionList() {
+            for(int i = 0; i < _SourceCode.Length; i++) {
+                AllInstructions.Add(deconstructInstruction(_SourceCode[i]));
+                MessageBox.Show("added to instruction list " + AllInstructions[i].ToString());
+            }
+            
+        }
+        
+        //Splits a complete instruction into its different parts
+        private Instruction deconstructInstruction(String completeInstruction) {
+            Instruction deconstructedInstruction = null;
+            String instruction = "";
+            String source = "";
+            String destination = "";
+            int instructionInt;
+            int sourceInt;
+            int destinationInt;
+
+            for (int i = 0; i < 2; i++) {
+                instruction += completeInstruction[i];
+            }
+            for (int i = 2; i < 4; i++) {
+                source += completeInstruction[i];
+            }
+            for (int i = 4; i < 6; i++) {
+                destination += completeInstruction[i];
+            }
+
+            instructionInt = stringToInt(instruction);
+            sourceInt = stringToInt(source);
+            destinationInt = stringToInt(destination);
+
+            deconstructedInstruction = instructionFromInt(instructionInt, sourceInt, destinationInt);
+
+            return deconstructedInstruction;
+
+        }
+
+        private Instruction instructionFromInt(int instructionNum, int source, int destination) {
+            Instruction returnInstruction = null;
+            switch (instructionNum) {
+                case 70:
+                    returnInstruction = new Add(new Register(source), new Register(destination));
+                    break;
+                case 51:
+                    returnInstruction = new Write(new Register(source), new Register(destination));
+                    break;
+
+            }
+
+            return returnInstruction;
+        }
+
+        private int stringToInt(String str) {
+            int num = 0;
+            bool isNum;
+            isNum = int.TryParse(str, out num);
+            if (isNum) {
+                return num;
+            }
+            else {
+                return -1;
+            }
         }
 
         public void displaySourceCode() {
@@ -31,8 +106,8 @@ namespace KalenWilliamsProject6a {
 
             if (validateSourceCode(_SourceCode)) {
                 for (int i = 0; i < _SourceCode.Length; i++) {
-                    formattedMemory = i.ToString("D3");
-                    sourceDisplay.Text += formattedMemory + " " + _SourceCode[i] + "\r\n";
+                    formattedMemory = i.ToString("D2");
+                    sourceDisplay.Text += formattedMemory + "   " + _SourceCode[i] + "\r\n";
                 }
             }
             else {
